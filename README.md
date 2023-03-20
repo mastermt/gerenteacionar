@@ -1,0 +1,2 @@
+# gerenteacionar
+Gerente Acionar
