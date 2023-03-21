@@ -159,10 +159,6 @@ object Main: TMain
     object TS_Aluno: TTabSheet
       Caption = 'Aluno'
       ImageIndex = 10
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label_Aluno: TLabel
         Left = 173
         Top = 8
@@ -303,10 +299,6 @@ object Main: TMain
     end
     object TabSheet_Discovery: TTabSheet
       Caption = 'English Discovery'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ToolBarEnglishDiscovery: TToolBar
         Tag = 1
         Left = 0
@@ -411,10 +403,6 @@ object Main: TMain
     object TabSheet_Children: TTabSheet
       Caption = 'Children'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ToolBarChildren: TToolBar
         Tag = 2
         Left = 0
@@ -522,10 +510,6 @@ object Main: TMain
     object TabSheet_Educativos: TTabSheet
       Caption = 'Educativos'
       ImageIndex = 6
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ToolBarEducativos: TToolBar
         Left = 0
         Top = 0
@@ -617,10 +601,6 @@ object Main: TMain
     object TabSheet_Espanhol: TTabSheet
       Caption = 'Espa'#241'ol'
       ImageIndex = 5
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ToolBarEspanol: TToolBar
         Tag = 3
         Left = 0
@@ -729,10 +709,6 @@ object Main: TMain
     object TabSheet_Reward: TTabSheet
       Caption = 'Reward'
       ImageIndex = 9
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ToolBar2: TToolBar
         Tag = 4
         Left = 0
@@ -801,10 +777,6 @@ object Main: TMain
     object TabSheet_English: TTabSheet
       Caption = 'English'
       ImageIndex = 5
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ToolBarEnglish: TToolBar
         Tag = 4
         Left = 0
@@ -905,10 +877,6 @@ object Main: TMain
     object TabSheet_Outros: TTabSheet
       Caption = 'Outros'
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ToolBarOutros: TToolBar
         Tag = 5
         Left = 0
@@ -1035,7 +1003,7 @@ object Main: TMain
     Left = 112
     Top = 104
     Bitmap = {
-      494C01010A000C00280020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01010A000C00040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       00000000000036000000280000008000000060000000010020000000000000C0
       00000000000000000000000000000000000000000000FF000000FF000000FF00
       0000FF000000FF000000FF000000FF000000FF00000000000000FFFFFF0000FF
@@ -2634,7 +2602,7 @@ object Main: TMain
     Left = 216
     Top = 104
     Bitmap = {
-      494C010111001300280020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010111001300040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000A000000001002000000000000040
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -5289,7 +5257,7 @@ object Main: TMain
     Left = 544
     Top = 104
     Bitmap = {
-      494C010106000800280020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010106000800040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000004000000001002000000000000080
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -6360,7 +6328,7 @@ object Main: TMain
     Left = 355
     Top = 104
     Bitmap = {
-      494C010104000600280020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010104000600040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000004000000001002000000000000080
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -7431,7 +7399,7 @@ object Main: TMain
     Left = 446
     Top = 104
     Bitmap = {
-      494C010104000600280020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010104000600040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000004000000001002000000000000080
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -8502,7 +8470,7 @@ object Main: TMain
     Left = 704
     Top = 104
     Bitmap = {
-      494C010106002800280020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010106002800040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000004000000001002000000000000080
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000F9FDFB00BBE2

@@ -1,6 +1,6 @@
 { ---------------------------------------------------------------------------
   ACIONAR
-  Copyright (C) 1996-2013  Pedro Tomaz Alves
+  Copyright (C) 1996-2023  Pedro Tomaz Alves
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU General Public License
@@ -27,7 +27,7 @@ uses
   ImgList, Buttons, ComCtrls, ToolWin, Dialogs, Menus,
   ScktComp,
   MMSystem,
-  Graphics, jpeg, DB, DBCtrls, XPMan, System.UITypes;
+  Graphics, jpeg, DB, DBCtrls, XPMan, System.UITypes, System.ImageList;
 
 const
   // WallPaperStyles
@@ -925,8 +925,8 @@ begin
   // vsLegalCopyright, vsOriginalFilename,
   // vsProductName,    vsProductVersion);
 
-  Main.Caption := CompName + ' (' + Usuario + ')' + ' - v' +
-    GetVersionString(Application.exename, vsFileVersion);
+  Main.Caption := CompName + ' (' + Usuario + ')' + ' - v' {+
+    GetVersionString(Application.exename, vsFileVersion)};
 
   try
 {$IFDEF DEBUG}
@@ -1532,7 +1532,7 @@ begin
 
     56: // mostrar as conexoes de internet
       begin
-        EnviaTexto(56, Get_URL('IExplore'), False);
+        //EnviaTexto(56, Get_URL('IExplore'), False);
         //EnviaTexto(56, Get_URL('Firefox'), False);
       end;
 
@@ -1699,67 +1699,6 @@ procedure TMain.B_LoginClick(Sender: TObject);
     Foto_Aluno.Visible := False;
     B_Logout.Visible := False;
     B_Login.Visible := True;
-    // GBAK -B  -G –user SYSDBA –pas xxxx C:\BD.FDB stdout | GBAK -C –user SYSDBA –pas xxxx stdin  C:\BD_BACKUP.FDB
-    {
-      Como armazenar/visualizar figuras JPEG no IB/FB
-
-      Data da última atualização: 03/01/2003 estão muito testadas, se alguém não gostar é só não utilizar, não precisa comentar.
-
-      A imagem será gravada em um campo Blob chamado LOGOTIPO A imagem será visualizada em um componente Timage, pois TDBImage não consegue mostrar um Jpeg a partir do banco.
-
-      uses
-      Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-      ExtDlgs, ExtCtrls, DBCtrls, StdCtrls, ComCtrls, Mask, Buttons, Db,
-      DBGrids, JPEG, IBCustomDataSet, IBQuery, IBUpdateSQL;
-
-      1 º Carregando uma imagem para o campo LOGOTIPO a partir de um arquivo.
-
-      procedure TForm1.SpeedButtonCarregaImagemClick(Sender: TObject);
-      var
-      FileStream : TFileStream;
-      BlobStream : TStream;
-      begin
-      if not (IBDataSetImagem.State in ([dsEdit, dsInsert])) then
-      IBDataSetImagem.Edit;
-      if OpenPictureDialogLogo.Execute then
-      begin
-      FileStream:=TFileStream.Create(OpenPictureDialogLogo.FileName,
-      fmOpenRead or fmShareDenyWrite);
-      BlobStream:=IBDataSetImagem.CreateBlobStream(IBDataSetImagemLOGOTIPO,bmWrite);
-      try
-      BlobStream.CopyFrom(FileStream,FileStream.Size);
-      finally
-      FileStream.Free;
-      BlobStream.Free;
-      end;
-      end;
-      end;
-      2 - Vizualizando a imagem no evento OnDataChange do DataSource
-
-
-      procedure TForm1.DataSourceImagemDataChange(Sender: TObject; Field: TField);
-      var
-      BlobStream : TStream;
-      JPEGImage : TJPEGImage;
-      begin
-      if IBDataSetImagemLOGOTIPO.BlobSize <> 0 then
-      begin
-      BlobStream:= IBDataSetImagem.CreateBlobStream(IBDataSetImagemLOGOTIPO,bmRead);
-      JPEGImage:= TJPEGImage.Create;
-      try
-      JPEGImage.LoadFromStream(BlobStream);
-      Image1.Picture.Assign(JPEGImage);
-      finally
-      BlobStream.Free;
-      JPEGImage.Free;
-      end;
-      end
-      else
-      Image1.Picture:=nil;
-      end;
-      Autor : Eliandro May <eliandro@delgrande.com.br> (Del Grande Informática)
-      Enviado para a lista FireBase e reproduzido aqui com a autorização do autor.
-    }
   end;
 
 end.

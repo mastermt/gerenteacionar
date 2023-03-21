@@ -1,6 +1,6 @@
 { ----------------------------------------------------------------------------
   ACIONAR
-  Copyright (C) 1996-2013  Pedro Tomaz Alves
+  Copyright (C) 1996-2023  Pedro Tomaz Alves
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU General Public License
@@ -25,6 +25,7 @@ Uses
   Registry,
   messages,
   sysutils,
+  AnsiStrings,
   classes,
   Forms,
   Graphics,
@@ -49,13 +50,13 @@ function MyExitWindows(RebootParam: Longword): Boolean;
 procedure WriteOSD(S: string; Size, Y: Integer);
 procedure DeleteIECache;
 function GetFirstCdRomDrive: string;
-function Get_URL(Servicio: string): String;
+{function Get_URL(Servicio: string): String;}
 function Copy2SymbDel(var S: string; Symb: Char): string;
 function Copy2Symb(const S: string; Symb: Char): string;
 function DelBSpace(const S: string): string;
 procedure GetProcsAndWindows(SL: TStrings; DelIgnores: Boolean);
 function GetDescription(const fname: String; var Typ: gdExeType): String;
-function GetVersionString(const fname: String; vs: gvStrType): String;
+// function GetVersionString(const fname: String; vs: gvStrType): String;
 function IsPreRelease(const fname: String): Boolean;
 function NumeroDeSerie(FDrive: String): String;
 function EspacoLivre(unidade: byte): Integer;
@@ -662,6 +663,7 @@ begin
   EnumWindows(@ListWinProc, Integer(SL));
 end;
 
+{
 function GetVersionString(const fname: String; vs: gvStrType): String;
 VAR
   verInfoSize: Integer;
@@ -708,7 +710,8 @@ begin
           Break;
         end;
         Dec(vsLen, 4);
-        inc(Integer(P), 4);
+        inc(P, 4);
+        // P := Integer(P) + 4;
       end;
       IF valName = '' THEN // try for any English
       begin
@@ -723,7 +726,8 @@ begin
             Break;
           end;
           Dec(vsLen, 4);
-          inc(Integer(P), 4);
+        // inc(Integer(P), 4);
+        P := Integer(P) + 4;
         end;
       end;
       // If no English at all, just use the first
@@ -768,6 +772,7 @@ begin
     FreeMem(verInfoBuff);
   end;
 end;
+}
 
 function IsPreRelease(const fname: String): Boolean;
 VAR
@@ -854,7 +859,8 @@ begin
       begin
         // 32-bit "Portable Executable"
         Typ := gdPE;
-        Result := GetVersionString(fname, vsFileDescription);
+        // Result := GetVersionString(fname, vsFileDescription);
+        Result := 'Without getversion';
       end;
     finally
       CloseFile(f);
@@ -918,6 +924,7 @@ Begin
   end;
 end;
 
+{
 function Get_URL(Servicio: string): String;
 var
   Cliente_DDE: TDDEClientConv;
@@ -929,13 +936,14 @@ begin
   begin
     SetLink(Servicio, 'WWW_GetWindowInfo');
     temp := RequestData('0xFFFFFFFF');
-    Result := StrPas(temp);
-    StrDispose(temp); // <<-Avoid Mem Leak:  Thanks to ronit
+    StrCopy(Result, temp);
+    FreeMem(temp); // <<-Avoid Mem Leak:  Thanks to ronit
     CloseLink;
   end;
   Cliente_DDE.Free;
   // SHGetFileInfo(TWebBrowser);
 end;
+}
 
 function GetAssociation(const DocFileName: string): string;
 var
