@@ -1,14 +1,3 @@
-// {$IFDEF AGENTE}
-// object Agente: TAgent
-// Left = 344
-// Top = 16
-// Width = 32
-// Height = 32
-// OnClick = AgenteClick
-// ControlData = {020200004F0300004F030000}
-// end
-// {$ENDIF}
-
 unit main;
 { -------------------------------------------------------------------------------
   GERENTE
@@ -40,13 +29,8 @@ uses
   MMSystem,
   ShellApi, CheckLst,
   OleCtrls,
-{$IFDEF AGENTE}
-  AgentObjects_TLB,
-{$ENDIF}
   jpeg,
   Registry, IniFiles, System.UITypes, System.Actions, System.ImageList,
-// dcntree,
-// DECUtil, Hash, Cipher
   Vcl.Themes,
   Vcl.Styles;
 type
@@ -200,10 +184,6 @@ type
     procedure Timer1Timer(Sender: TObject);
     procedure B_InverteSelectClick(Sender: TObject);
     procedure Timer2Timer(Sender: TObject);
-{$IFDEF AGENTE}
-    procedure AgenteClick(Sender: TObject; const CharacterID: WideString;
-      Button, Shift, x, y: Smallint);
-{$ENDIF}
     procedure B_RodarScriptClick(Sender: TObject);
     procedure B_CapturaTelaClick(Sender: TObject);
     procedure TB_TravaCDROMClick(Sender: TObject);
@@ -217,7 +197,6 @@ type
     procedure SB_SairClick(Sender: TObject);
 
   private
-{$IFDEF AGENTE} vPersonagem: String; {$ENDIF}
     Ver_Micro: Word;
     Resp_Micro: Boolean;
     Micros: Word;
@@ -443,9 +422,6 @@ end;
 
 procedure TCliente.FormCreate(Sender: TObject);
 var
-{$IFDEF AGENTE}
-  Agent_Name: TFileName;
-{$ENDIF}
   I: Byte;
   //L: DWORD;
   Temp: string;
@@ -459,9 +435,6 @@ begin
   Timer1.Enabled := False;
   Timer2.Enabled := False;
   Inicio := True;
-{$IFDEF AGENTE}
-  Agent_Name := GetWindowsDir + '\MSAGENT\CHARS\';
-{$ENDIF}
   // L := Sizeof(CompWinDir);
   // GetWindowsDirectory(@CompWinDir,L); // Windows directory path
   //L := Sizeof(CompName);
@@ -477,40 +450,6 @@ begin
   Cliente.Caption := 'Gerente - Pedro Tomaz Alves 1996-2023 v' +
                       GetAppVersionStr + ' - ' + CompName;
 
-
-
-{$IFDEF AGENTE}
-  try
-    { como exemplo esta sendo carregado o character "genie"
-      caso voce tenha instalado e queira utilizando outro
-      character basta mudar o texto "Genie" pelo nome do
-      seu character nas 2 linhas abaixo }
-    vPersonagem := 'Peedy';
-
-    if FileExists(Agent_Name + 'genie.acs') Then
-      Agent_Name := Agent_Name + 'genie.acs';
-    if FileExists(Agent_Name + 'peedy.acs') Then
-      Agent_Name := Agent_Name + 'peedy.acs';
-    if FileExists(Agent_Name + 'merlin.acs') Then
-      Agent_Name := Agent_Name + 'merlin.acs';
-    if FileExists(Agent_Name + 'robby.acs') Then
-      Agent_Name := Agent_Name + 'robby.acs';
-
-    Agente.Characters.Load(vPersonagem, Agent_Name);
-
-    with Agente.Characters.Character(vPersonagem) do
-    begin
-      moveto(400, 300, 0);
-      show(False);
-      Play('Congratulate');
-      Speak('Bem vindo! ao Gerente.', vURL);
-    end;
-  except
-    // gera uma exceção caso o character definido seja invalido
-    Reportar('O Character especificado não pode ser carregado!',
-      CompName, rtLocal);
-  end;
-{$ENDIF}
   Caderno.PageIndex := 0;
   SB_Enderecar.Click;
   Preencher_Program;
@@ -593,17 +532,6 @@ begin
       end;
     end;
   end;
-{$IFDEF AGENTE}
-  with Agente do
-  begin
-    { Esconde o personagem }
-    Characters.Character(vPersonagem).Hide(False);
-    { Descarrega o personagem }
-    Characters.Unload(vPersonagem);
-    { termina os serviços como o Servidor do Assistente }
-    Connected := False;
-  end;
-{$ENDIF}
 end;
 
 procedure TCliente.FormResize(Sender: TObject);
@@ -1086,7 +1014,6 @@ var
   Conteudo: TListItem;
   I: Word;
   x, Apagar: Integer;
-{$IFDEF AGENTE} URL_OK: Boolean; {$ENDIF}
   RemoteHost, RemoteAddress: String;
 begin
   RemoteHost := UpperCase(Socket.RemoteHost);
@@ -1102,22 +1029,6 @@ begin
     0: // Somente mensagems
       begin
         Reportar(Mestra1, RemoteAddress, rtReceber);
-{$IFDEF AGENTE}
-        try
-          with Agente.Characters.Character(vPersonagem) do
-          begin
-            // StopAll('');
-            if Pos('Mundança de Display', Mestra1) = 0 then
-            begin
-              Play('Announce');
-              Speak('O micro ' + RemoteHost + ', diz: ' + Mestra1, vURL);
-            end;
-          end;
-        except
-          // gera uma exceção caso o character não tenha esta animação
-          Reportar('Agente não possui a animação definida!', 'Erro', rtLocal);
-        end;
-{$ENDIF}
       end;
     1: // Coneccao aceita pelo servidor
       with LV_Maquinas.Items do
@@ -1217,32 +1128,6 @@ begin
             Conteudo.SubItems.Add(DateToStr(Date));
             Conteudo.SubItems.Add(TimeToStr(Time));
             Conteudo.ImageIndex := 6;
-{$IFDEF AGENTE}
-            try
-              with Agente.Characters.Character(vPersonagem) do
-              begin
-                // StopAll('');
-                Play('GetAttention');
-                Mestra1 := ApagarStr(Mestra1, 'http://');
-                // Mestra1 := ApagarStr(Mestra1, 'www.');
-                // Mestra1 := Copy2SymbDel(Mestra1, '/');
-                URL_OK := (length(Mestra1) > 4);
-                // if URL_OK Then
-                // URL_OK := (Pos('hotmail',Mestra1) = 0) ;
-                if URL_OK Then
-                begin
-                  Speak('O micro ' + RemoteHost + ', está na página: ' +
-                    Mestra1, vURL);
-                  Play('GetAttentionReturn');
-                end;
-              end;
-            except
-              // gera uma exceção caso o character
-              // não tenha esta animação
-              Reportar('Agente não possui a animação definida!',
-                'Erro', rtLocal);
-            end;
-{$ENDIF}
           finally
             EndUpdate;
           end; // try
@@ -1253,21 +1138,6 @@ begin
         Resp_Micro := True;
 {$IFDEF DEBUG}
         Reportar(Mestra1, RemoteAddress, rtReceber);
-{$IFDEF AGENTE}
-        try
-          with Agente.Characters.Character(vPersonagem) do
-          begin
-            StopAll('');
-            Play('Write');
-            Speak('O micro ' + RemoteHost + ', avisa que está OK!'
-              { + Mestra1 } , vURL);
-            Play('WriteReturn');
-          end;
-        except
-          // gera uma exceção caso o character não tenha esta animação
-          Reportar('Agente não possui a animação definida!', 'Erro', rtLocal);
-        end;
-{$ENDIF}
 {$ENDIF}
       end;
     { with LV_Maquinas.Items do
@@ -1627,17 +1497,6 @@ begin
   // DCTree1.Items.Item[F].State{CheckListBox1.State[F]} := cbUnChecked
   // end;
 end;
-{$IFDEF AGENTE}
-
-procedure TCliente.AgenteClick(Sender: TObject; const CharacterID: WideString;
-  Button, Shift, x, y: Smallint);
-begin
-  with Agente.Characters.Character(vPersonagem) do
-  begin
-    StopAll('');
-  end;
-end;
-{$ENDIF}
 
 procedure TCliente.B_RodarScriptClick(Sender: TObject);
 var
