@@ -474,7 +474,10 @@ begin
   // vsLegalCopyright, vsOriginalFilename,
   // vsProductName,    vsProductVersion);
 
-  Cliente.Caption := 'Gerente - v' + GetAppVersionStr + ' - ' + CompName;
+  Cliente.Caption := 'Gerente - Pedro Tomaz Alves 1996-2023 v' +
+                      GetAppVersionStr + ' - ' + CompName;
+
+
 
 {$IFDEF AGENTE}
   try

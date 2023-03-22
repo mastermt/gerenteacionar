@@ -2,7 +2,7 @@ object Cliente: TCliente
   Left = 512
   Top = 138
   BiDiMode = bdRightToLeftReadingOnly
-  Caption = 'Gerente - Pedro Tomaz Alves - 1996-2018'
+  Caption = 'Gerente - Pedro Tomaz Alves - 1996-2023'
   ClientHeight = 621
   ClientWidth = 834
   Color = clBtnFace
