@@ -6,9 +6,9 @@ uses
   Messages,
   ShellAPI,
   sysutils,
-  Acao in 'Acao.pas' {Main} ,
-  senha in 'senha.pas' {PasswordDlg} ,
-  escravo_unit in 'escravo_unit.pas',
+  Acao in 'Acao.pas' {Main},
+  senha in 'senha.pas' {PasswordDlg},
+  workers_unit in 'workers_unit.pas',
   Util in 'Util.pas',
   uDGProcessList in 'uDGProcessList.pas';
 

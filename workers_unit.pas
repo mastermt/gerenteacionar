@@ -16,7 +16,7 @@
   http://www.gnu.org/copyleft/gpl.html
   ------------------------------------------------------------------------------- }
 
-unit escravo_unit;
+unit workers_unit;
 
 interface
 
@@ -248,7 +248,7 @@ var
   ProcessList: TDGProcessList;
   JS: AnsiString;
 begin
-  Main.Escravo.Socket.Connections[0].SendText('Iniciando Lista de Processos');
+  Main.Workers.Socket.Connections[0].SendText('Iniciando Lista de Processos');
   ProcessList := TDGProcessList.Create;
   ProcessList.Refresh;
   JS := '13#Lista de Processos#';
@@ -256,7 +256,7 @@ begin
   FOR Index := 0 TO ProcessList.Count - 1 DO
     JS := JS + ProcessList.ProcessInfoToStr2(Index);
 
-  Main.Escravo.Socket.Connections[0].SendText(JS);
+  Main.Workers.Socket.Connections[0].SendText(JS);
   FreeAndNil(ProcessList);
 end;
 
@@ -268,7 +268,7 @@ end;
   JS: AnsiString;
   begin
   SL := TStringList.Create;
-  //Acao.Escravo.Socket.Connections[0].SendText('Iniciando Lista de Processos');
+  //Acao.Workers.Socket.Connections[0].SendText('Iniciando Lista de Processos');
   try
   GetProcsAndWindows(SL, False);
   js:='13#Lista de Processos#';
@@ -282,7 +282,7 @@ end;
   Util.WriteOSD(JS,14, 150);
   {$endif }
 {
-  Acao.Escravo.Socket.Connections[0].SendText(js);
+  Acao.Workers.Socket.Connections[0].SendText(js);
   finally
   SL.Free;
   end;

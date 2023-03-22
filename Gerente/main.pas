@@ -629,7 +629,7 @@ begin
 end;
 
 {
-  Envia mensagem ao escravo dizendo que a maquina em que se hospeda deve
+  Envia mensagem ao worker dizendo que a maquina em que se hospeda deve
   ser reinicado forçadamente
 }
 procedure TCliente.SB_ReiniciarClick(Sender: TObject);
@@ -656,7 +656,7 @@ begin
 end;
 
 {
-  Envia mensagem ao escravo dizendo que o texto que esta sendo mandado
+  Envia mensagem ao worker dizendo que o texto que esta sendo mandado
   deve apresentar-se na tela da mesma como se fosse uma mensagem
 }
 procedure TCliente.SB_MensagemClick(Sender: TObject);
@@ -915,7 +915,7 @@ begin
 end;
 
 {
-  Envia mensagem ao escravo dizendo que a maquina em que se hospeda deve
+  Envia mensagem ao worker dizendo que a maquina em que se hospeda deve
   ser Desligada
 }
 
@@ -1284,7 +1284,7 @@ begin
 end;
 
 {
-  Realiza o processo de coneção entre o gerente e o escravo com as maquinas que
+  Realiza o processo de coneção entre o gerente e o worker com as maquinas que
   estiverem marcadas
 }
 procedure TCliente.SB_ConectarClick(Sender: TObject);

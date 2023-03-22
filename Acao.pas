@@ -140,8 +140,7 @@ type
     Label_Tempo: TLabel;
     B_Logout: TBitBtn;
     DBText1: TDBText;
-    XPManifest: TXPManifest;
-    Escravo: TServerSocket;
+    Workers: TServerSocket;
     Label_Codigo: TLabel;
     Label_Senha: TLabel;
     Edit_Codigo: TEdit;
@@ -154,14 +153,14 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
     procedure SystemKeys(Disable: Boolean);
     procedure ShowDesktop(const YesNo: Boolean);
-    procedure EscravoAccept(Sender: TObject; Socket: TCustomWinSocket);
-    procedure EscravoClientDisconnect(Sender: TObject;
+    procedure WorkersAccept(Sender: TObject; Socket: TCustomWinSocket);
+    procedure WorkersClientDisconnect(Sender: TObject;
       Socket: TCustomWinSocket);
-    procedure EscravoClientRead(Sender: TObject; Socket: TCustomWinSocket);
+    procedure WorkersClientRead(Sender: TObject; Socket: TCustomWinSocket);
     procedure VideoChange(I: byte);
     Procedure Conectar(Server: Pchar; Letra: Pchar; Programa: Pchar;
       PastaAtual: Pchar; SizeScreen: String; Liberar: Pchar; MontarISO: Pchar);
-    procedure EscravoClientError(Sender: TObject; Socket: TCustomWinSocket;
+    procedure WorkersClientError(Sender: TObject; Socket: TCustomWinSocket;
       ErrorEvent: TErrorEvent; var ErrorCode: Integer);
     procedure Timer_ExplorerTimer(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -192,7 +191,7 @@ type
   end;
 
 var
-  Escravo: TServerSocket;
+  Workers: TServerSocket;
   Main: TMain;
   Servidor: String;
   registro: TIniFile;
@@ -207,7 +206,7 @@ var
 
 implementation
 
-uses senha, reobjs, escravo_unit, Util;
+uses senha, reobjs, workers_unit, Util;
 
 {$R *.DFM}
 
@@ -264,7 +263,7 @@ end;
 
 procedure TMain.EnviaTexto(Numero: byte; Texto: String; Desligar: Boolean);
 Begin
-  with Escravo.Socket do
+  with Workers.Socket do
   begin
     if ActiveConnections > 0 Then
       if Connections[0].Connected Then
@@ -572,7 +571,7 @@ begin
       {NetErro := } WNetAddConnection2(NRW, '', 'alunos', 0
       { CONNECT_UPDATE_PROFILE } );
 
-    { if Escravo.Socket.ActiveConnections > 0 Then
+    { if Workers.Socket.ActiveConnections > 0 Then
       Begin
       case NetErro of
       ERROR_ACCESS_DENIED	   :
@@ -614,10 +613,10 @@ begin
       ERROR_NO_NETWORK		:
       Retorno:='There is no network present.';
       end; // case NetError
-      if Escravo.Socket.Connections[0].Connected Then
-      Escravo.Socket.Connections[0].SendText('00#Network Erro: '+
+      if Workers.Socket.Connections[0].Connected Then
+      Workers.Socket.Connections[0].SendText('00#Network Erro: '+
       Retorno);
-      end; // if Escravo
+      end; // if Workers
       except
       NetErro:=0;
 
@@ -751,7 +750,7 @@ var
   //
 
 begin
-  // Escravo := TServerSocket.Create(Main);
+  // Workers := TServerSocket.Create(Main);
 
   // Previne q o prg seja carregado + de 1 vez na memoria
   // Register a custom windows message
@@ -1002,7 +1001,7 @@ begin
   // CloseHandle(pi.hProcess);
   // CloseHandle(pi.hThread);
 
-  Escravo.Active := True;
+  Workers.Active := True;
 
 end;
 
@@ -1400,7 +1399,7 @@ begin
   // Fechar porta do drive de CDROM
   //CR_EjectCD(False);
 
-  Escravo.Close;
+  Workers.Close;
 end;
 
 procedure TMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -1410,13 +1409,13 @@ begin
     'Você quer Reiniciar o Windows?', mtConfirmation, mbYesNoCancel, 0) of
     mrYes:
       begin
-        EnviaTexto(2, 'Escravo desconectado pelo Usuario', True);
+        EnviaTexto(2, 'Worker desconectado pelo Usuario', True);
         CanClose := True; // Allow Windows to shut down.
         ExitWindowsEx(15, 0);
       end;
     mrNo:
       begin
-        EnviaTexto(2, 'Escravo desconectado pelo Usuario', True);
+        EnviaTexto(2, 'Worker desconectado pelo Usuario', True);
         CanClose := True; // Allow Windows to shut down.
         Application.Terminate;
       end;
@@ -1428,26 +1427,26 @@ begin
 
 end;
 
-procedure TMain.EscravoAccept(Sender: TObject; Socket: TCustomWinSocket);
+procedure TMain.WorkersAccept(Sender: TObject; Socket: TCustomWinSocket);
 begin
   EnviaTexto(1, 'Coneção aceita!', False);
 end;
 
-procedure TMain.EscravoClientError(Sender: TObject; Socket: TCustomWinSocket;
+procedure TMain.WorkersClientError(Sender: TObject; Socket: TCustomWinSocket;
   ErrorEvent: TErrorEvent; var ErrorCode: Integer);
 begin
   ShowMessage('Erro via Gerente'#13 + IntToStr(ErrorCode));
   ErrorCode := 0;
 end;
 
-procedure TMain.EscravoClientDisconnect(Sender: TObject;
+procedure TMain.WorkersClientDisconnect(Sender: TObject;
   Socket: TCustomWinSocket);
 begin
-  Escravo.Active := False;
-  Escravo.Active := True;
+  Workers.Active := False;
+  Workers.Active := True;
 end;
 
-procedure TMain.EscravoClientRead(Sender: TObject; Socket: TCustomWinSocket);
+procedure TMain.WorkersClientRead(Sender: TObject; Socket: TCustomWinSocket);
 var
   I: byte;
   Palavra: AnsiString;
@@ -1537,7 +1536,7 @@ begin
       end;
 
     57: // Finalizar a conexao
-      EnviaTexto(2, 'Escravo desconectado pelo Gerente', True);
+      EnviaTexto(2, 'Worker desconectado pelo Gerente', True);
     58: // Liberar programas do ACIONAR
       begin
         for I := 0 to PageControl1.PageCount - 1 do

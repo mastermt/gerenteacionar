@@ -134,7 +134,7 @@
         <DCCReference Include="senha.pas">
             <Form>PasswordDlg</Form>
         </DCCReference>
-        <DCCReference Include="escravo_unit.pas"/>
+        <DCCReference Include="workers_unit.pas"/>
         <DCCReference Include="Util.pas"/>
         <DCCReference Include="uDGProcessList.pas"/>
         <BuildConfiguration Include="Debug">

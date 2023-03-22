@@ -638,7 +638,7 @@ object Main: TMain
           OnKeyUp = Edit2KeyUp
         end
         object UpDown2: TUpDown
-          Left = 25
+          Left = 41
           Top = 0
           Width = 15
           Height = 52
@@ -651,14 +651,14 @@ object Main: TMain
         end
         object ESPCD: TToolButton
           Tag = 50
-          Left = 40
+          Left = 56
           Top = 0
           Caption = 'Espa'#241'ol en CD'
           ImageIndex = 1
           OnClick = TudoClick
         end
         object ToolButton27: TToolButton
-          Left = 118
+          Left = 134
           Top = 0
           Width = 8
           Caption = 'ToolButton27'
@@ -667,7 +667,7 @@ object Main: TMain
         end
         object ToolButton20: TToolButton
           Tag = 51
-          Left = 126
+          Left = 142
           Top = 0
           Caption = 'Contacto 1'
           ImageIndex = 0
@@ -675,7 +675,7 @@ object Main: TMain
         end
         object ToolButton21: TToolButton
           Tag = 52
-          Left = 204
+          Left = 220
           Top = 0
           Caption = 'Contacto 2'
           ImageIndex = 0
@@ -683,7 +683,7 @@ object Main: TMain
         end
         object ToolButton22: TToolButton
           Tag = 53
-          Left = 282
+          Left = 298
           Top = 0
           Caption = 'Contacto 3'
           ImageIndex = 0
@@ -691,14 +691,14 @@ object Main: TMain
         end
         object ToolButton19: TToolButton
           Tag = 54
-          Left = 360
+          Left = 376
           Top = 0
           Caption = 'Triple Play '
           ImageIndex = 2
           OnClick = TudoClick
         end
         object ToolButton44: TToolButton
-          Left = 438
+          Left = 454
           Top = 0
           Caption = 'novo'
           ImageIndex = 3
@@ -814,7 +814,7 @@ object Main: TMain
           OnKeyUp = Edit1KeyUp
         end
         object UpDown1: TUpDown
-          Left = 26
+          Left = 42
           Top = 0
           Width = 15
           Height = 52
@@ -826,14 +826,14 @@ object Main: TMain
         end
         object EngCDROM: TToolButton
           Tag = 70
-          Left = 41
+          Left = 57
           Top = 0
           Caption = 'English in CD'
           ImageIndex = 0
           OnClick = TudoClick
         end
         object ToolButton25: TToolButton
-          Left = 117
+          Left = 133
           Top = 0
           Width = 8
           Caption = 'ToolButton25'
@@ -842,7 +842,7 @@ object Main: TMain
         end
         object ToolButton24: TToolButton
           Tag = 71
-          Left = 125
+          Left = 141
           Top = 0
           Caption = 'TOELF'
           ImageIndex = 1
@@ -850,7 +850,7 @@ object Main: TMain
         end
         object ToolButton34: TToolButton
           Tag = 72
-          Left = 201
+          Left = 217
           Top = 0
           Caption = 'Grammar 3D'
           ImageIndex = 2
@@ -858,7 +858,7 @@ object Main: TMain
         end
         object ToolButton61: TToolButton
           Tag = 73
-          Left = 277
+          Left = 293
           Top = 0
           Caption = 'Insideout Beg'
           ImageIndex = 3
@@ -866,7 +866,7 @@ object Main: TMain
         end
         object ToolButton62: TToolButton
           Tag = 74
-          Left = 353
+          Left = 369
           Top = 0
           Caption = 'Insideout Elem'
           ImageIndex = 3
@@ -9540,18 +9540,14 @@ object Main: TMain
     Left = 16
     Top = 104
   end
-  object XPManifest: TXPManifest
-    Left = 484
-    Top = 155
-  end
-  object Escravo: TServerSocket
+  object Workers: TServerSocket
     Active = False
     Port = 1025
     ServerType = stNonBlocking
-    OnAccept = EscravoAccept
-    OnClientDisconnect = EscravoClientDisconnect
-    OnClientRead = EscravoClientRead
-    OnClientError = EscravoClientError
+    OnAccept = WorkersAccept
+    OnClientDisconnect = WorkersClientDisconnect
+    OnClientRead = WorkersClientRead
+    OnClientError = WorkersClientError
     Left = 224
     Top = 152
   end

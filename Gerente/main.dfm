@@ -61,11 +61,9 @@ object Cliente: TCliente
       TabOrder = 0
       object TTabPage
         Left = 4
-        Top = 24
+        Top = 32
         HelpContext = 200
         Caption = 'Ferramentas'
-        ExplicitTop = 32
-        ExplicitHeight = 560
         object Bevel1: TBevel
           Left = 0
           Top = 0
@@ -328,16 +326,14 @@ object Cliente: TCliente
       end
       object TTabPage
         Left = 4
-        Top = 24
+        Top = 32
         HelpContext = 201
         Caption = 'Programas'
-        ExplicitTop = 32
-        ExplicitHeight = 560
         object LV_Programas: TListView
           Left = 0
           Top = 150
           Width = 620
-          Height = 418
+          Height = 410
           Align = alClient
           BiDiMode = bdLeftToRight
           Columns = <
@@ -386,7 +382,6 @@ object Cliente: TCliente
           OnColumnClick = ListViewColumnClick
           OnCompare = ListViewCompare
           OnDblClick = LV_ProgramasDblClick
-          ExplicitHeight = 410
         end
         object Panel_Prog_Dados: TPanel
           Left = 0
@@ -763,16 +758,14 @@ object Cliente: TCliente
       end
       object TTabPage
         Left = 4
-        Top = 24
+        Top = 32
         HelpContext = 202
         Caption = 'Processos'
-        ExplicitTop = 32
-        ExplicitHeight = 560
         object LV_Processos: TListView
           Left = 0
           Top = 44
           Width = 620
-          Height = 524
+          Height = 516
           Align = alClient
           BiDiMode = bdLeftToRight
           Columns = <
@@ -800,7 +793,6 @@ object Cliente: TCliente
           ViewStyle = vsReport
           OnColumnClick = ListViewColumnClick
           OnCompare = ListViewCompare
-          ExplicitHeight = 516
         end
         object Panel1: TPanel
           Left = 0
@@ -955,15 +947,13 @@ object Cliente: TCliente
       end
       object TTabPage
         Left = 4
-        Top = 24
+        Top = 32
         HelpContext = 203
         Caption = 'Registro'
-        ExplicitTop = 32
-        ExplicitHeight = 560
         object Splitter2: TSplitter
           Left = 145
           Top = 3
-          Height = 565
+          Height = 557
           ExplicitHeight = 409
         end
         object Splitter3: TSplitter
@@ -979,7 +969,7 @@ object Cliente: TCliente
           Left = 148
           Top = 3
           Width = 472
-          Height = 565
+          Height = 557
           Align = alClient
           BiDiMode = bdLeftToRight
           Columns = <
@@ -1007,32 +997,28 @@ object Cliente: TCliente
           ViewStyle = vsReport
           OnColumnClick = ListViewColumnClick
           OnCompare = ListViewCompare
-          ExplicitHeight = 557
         end
         object Panel_Registro1: TPanel
           Left = 0
           Top = 3
           Width = 145
-          Height = 565
+          Height = 557
           Align = alLeft
           BiDiMode = bdLeftToRight
           ParentBiDiMode = False
           TabOrder = 1
-          ExplicitHeight = 557
         end
       end
       object TTabPage
         Left = 4
-        Top = 24
+        Top = 32
         HelpContext = 204
         Caption = 'Internet'
-        ExplicitTop = 32
-        ExplicitHeight = 560
         object LV_Internet: TListView
           Left = 0
           Top = 39
           Width = 620
-          Height = 529
+          Height = 521
           Align = alClient
           BiDiMode = bdLeftToRight
           Columns = <
@@ -1061,7 +1047,6 @@ object Cliente: TCliente
           OnColumnClick = ListViewColumnClick
           OnCompare = ListViewCompare
           OnDblClick = LV_InternetDblClick
-          ExplicitHeight = 521
         end
         object ToolBar1: TToolBar
           Left = 0
@@ -1109,16 +1094,14 @@ object Cliente: TCliente
       end
       object TTabPage
         Left = 4
-        Top = 24
+        Top = 32
         HelpContext = 205
         Caption = 'Relat'#243'rios'
-        ExplicitTop = 32
-        ExplicitHeight = 560
         object LV_Report: TListView
           Left = 0
           Top = 0
           Width = 620
-          Height = 568
+          Height = 560
           Align = alClient
           BiDiMode = bdLeftToRight
           Columns = <
@@ -1146,7 +1129,6 @@ object Cliente: TCliente
           ViewStyle = vsReport
           OnColumnClick = ListViewColumnClick
           OnCompare = ListViewCompare
-          ExplicitHeight = 560
         end
       end
     end
