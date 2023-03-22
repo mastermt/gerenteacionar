@@ -137,7 +137,7 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="MAIN.PAS">
+        <DCCReference Include="main.pas">
             <Form>Cliente</Form>
         </DCCReference>
         <DCCReference Include="Unit_TelaInicial.pas"/>
