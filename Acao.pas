@@ -27,7 +27,7 @@ uses
   ImgList, Buttons, ComCtrls, ToolWin, Dialogs, Menus,
   ScktComp,
   MMSystem,
-  Graphics, jpeg, System.ImageList;
+  Graphics, jpeg, System.ImageList, System.UITypes;
 
 const
   // WallPaperStyles
@@ -158,7 +158,7 @@ type
     procedure WorkersClientRead(Sender: TObject; Socket: TCustomWinSocket);
     procedure VideoChange(I: byte);
     Procedure Conectar(Server: Pchar; Letra: Pchar; Programa: Pchar;
-      PastaAtual: Pchar; SizeScreen: String; Liberar: Pchar; MontarISO: Pchar);
+      PastaAtual: Pchar; SizeScreen: String; Liberar: Pchar; MontarISO: AnsiString);
     procedure WorkersClientError(Sender: TObject; Socket: TCustomWinSocket;
       ErrorEvent: TErrorEvent; var ErrorCode: Integer);
     procedure Timer_ExplorerTimer(Sender: TObject);
@@ -529,7 +529,7 @@ begin
 end;
 
 Procedure TMain.Conectar(Server: Pchar; Letra: Pchar; Programa: Pchar;
-  PastaAtual: Pchar; SizeScreen: String; Liberar: Pchar; MontarISO: Pchar);
+  PastaAtual: Pchar; SizeScreen: String; Liberar: Pchar; MontarISO: AnsiString);
 var
   { NetErro: LongInt;
     Retorno: String; }
@@ -553,8 +553,6 @@ begin
   //  SizeScreen := '';
   if Liberar = '' Then
     Liberar := Nil;
-  if MontarISO = '' Then
-    MontarISO := Nil;
 
   if not((Server = Nil) or (Letra = Nil)) Then
   begin
@@ -665,7 +663,7 @@ begin
     end;
   end;
 
-  if MontarISO <> Nil Then
+  if MontarISO <> '' Then
   Begin
     FillMemory(@si, SizeOf(si), 0);
     si.cb := SizeOf(si);
@@ -1252,7 +1250,7 @@ begin
 
         VideoChange(ListaScreen.ItemIndex);
         Conectar(Nil, Nil, Nil, Nil, PAnsiChar(Tela),
-          'Firefox.exe,iexplore.exe,chrome.exe,googlecrashandler.exe', Nil);
+          'Firefox.exe,iexplore.exe,chrome.exe,googlecrashandler.exe', '');
         ShellExecute(Handle, 'open', Pchar('http://www.ili.com.br/'), nil, nil,
           SW_SHOWNORMAL);;
       end;
@@ -1450,7 +1448,8 @@ var
   I: byte;
   Palavra: AnsiString;
   Numero: Integer;
-  Nome, Caminho, Letra, Comando, Pasta, Size_Screen, Liberar, montar_iso: Pchar;
+  Nome, Caminho, Letra, Comando, Pasta, Size_Screen, Liberar: Pchar;
+  montar_iso: AnsiString;
   // Script:TStrings;
 begin
   Palavra := Socket.ReceiveText;
@@ -1463,7 +1462,7 @@ begin
   Pasta := Pchar(GetParam(Palavra, '#', 6));
   Size_Screen := Pchar(GetParam(Palavra, '#', 7));
   Liberar := Pchar(GetParam(Palavra, '#', 8));
-  montar_iso := PWideChar(GetParam(Palavra, '#', 9));
+  montar_iso := AnsiString(GetParam(Palavra, '#', 9));
 
   case Numero of
     1: // Aviso de Coneccao

@@ -341,8 +341,8 @@ begin
           UserSize, PWideChar(Domain), DomainSize, sidNameUse) then
         begin
           Result := True;
-          UserName := StrPas(PAnsiChar(UserName));
-          Domain := StrPas(PAnsiChar(Domain));
+          UserName := AnsiString(UserName);
+          Domain := AnsiString(Domain);
         end; // if LookupAccountSid(nil, tokUser.User.Sid, PWideChar(UserName), UserSize,
       end; // if (UserSize <> 0) and (DomainSize <> 0) then begin
       if bSuccess then
