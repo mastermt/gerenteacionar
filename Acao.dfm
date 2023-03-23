@@ -1,6 +1,6 @@
 object Main: TMain
-  Left = 618
-  Top = 129
+  Left = 0
+  Top = 15
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False
   AlphaBlend = True
@@ -9,10 +9,11 @@ object Main: TMain
   BorderStyle = bsSingle
   BorderWidth = 1
   Caption = 'Acionar'
-  ClientHeight = 201
-  ClientWidth = 802
-  Color = clWhite
+  ClientHeight = 179
+  ClientWidth = 1008
+  Color = clBtnFace
   TransparentColorValue = clMenu
+  DefaultMonitor = dmDesktop
   DragKind = dkDock
   DragMode = dmAutomatic
   Font.Charset = DEFAULT_CHARSET
@@ -140,6 +141,7 @@ object Main: TMain
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
   OldCreateOrder = True
+  Position = poDesigned
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -150,12 +152,13 @@ object Main: TMain
     Tag = 30
     Left = 0
     Top = 0
-    Width = 802
+    Width = 1008
     Height = 161
-    ActivePage = TabSheet_Teacher
+    ActivePage = TS_Aluno
     Align = alTop
     Style = tsFlatButtons
     TabOrder = 0
+    ExplicitWidth = 800
     object TS_Aluno: TTabSheet
       Caption = 'Aluno'
       ImageIndex = 10
@@ -175,27 +178,13 @@ object Main: TMain
         Stretch = True
         Visible = False
       end
-      object Label_Turma: TLabel
-        Left = 173
-        Top = 24
-        Width = 62
-        Height = 13
-        Caption = 'Label_Turma'
-        Visible = False
-      end
       object Label_Tempo: TLabel
-        Left = 173
-        Top = 40
+        Left = 167
+        Top = 32
         Width = 65
         Height = 13
         Caption = 'Label_Tempo'
         Visible = False
-      end
-      object DBText1: TDBText
-        Left = 209
-        Top = 8
-        Width = 65
-        Height = 17
       end
       object Label_Codigo: TLabel
         Left = 3
@@ -213,9 +202,17 @@ object Main: TMain
         Caption = 'Senha'
         Visible = False
       end
+      object Label_Turma: TLabel
+        Left = 173
+        Top = 24
+        Width = 62
+        Height = 13
+        Caption = 'Label_Turma'
+        Visible = False
+      end
       object B_Login: TBitBtn
-        Left = 148
-        Top = 28
+        Left = 238
+        Top = 27
         Width = 75
         Height = 24
         Caption = 'Login'
@@ -258,7 +255,7 @@ object Main: TMain
         Tag = 5
         Left = 0
         Top = 0
-        Width = 794
+        Width = 1000
         Height = 52
         AutoSize = True
         ButtonHeight = 52
@@ -271,6 +268,7 @@ object Main: TMain
         ShowCaptions = True
         ShowHint = True
         TabOrder = 0
+        ExplicitWidth = 792
         object ToolButton38: TToolButton
           Tag = 92
           Left = 0
@@ -303,7 +301,7 @@ object Main: TMain
         Tag = 1
         Left = 0
         Top = 0
-        Width = 794
+        Width = 1000
         Height = 52
         AutoSize = True
         ButtonHeight = 52
@@ -318,6 +316,7 @@ object Main: TMain
         ShowCaptions = True
         ShowHint = True
         TabOrder = 0
+        ExplicitWidth = 1039
         object ToolButton13: TToolButton
           Tag = 1
           Left = 0
@@ -407,8 +406,8 @@ object Main: TMain
         Tag = 2
         Left = 0
         Top = 0
-        Width = 794
-        Height = 104
+        Width = 1000
+        Height = 52
         AutoSize = True
         ButtonHeight = 52
         ButtonWidth = 92
@@ -422,6 +421,7 @@ object Main: TMain
         ShowCaptions = True
         ShowHint = True
         TabOrder = 0
+        ExplicitWidth = 1039
         object ToolButton11: TToolButton
           Tag = 32
           Left = 0
@@ -461,13 +461,12 @@ object Main: TMain
           Top = 0
           Caption = 'Talk Dict'
           ImageIndex = 9
-          Wrap = True
           OnClick = TudoClick
         end
         object ToolButton37: TToolButton
           Tag = 41
-          Left = 0
-          Top = 52
+          Left = 460
+          Top = 0
           Caption = 'Sesame'
           ImageIndex = 10
           Visible = False
@@ -475,32 +474,32 @@ object Main: TMain
         end
         object ToolButton42: TToolButton
           Tag = 42
-          Left = 92
-          Top = 52
+          Left = 552
+          Top = 0
           Caption = 'Let'#180's Go'
           ImageIndex = 10
           OnClick = TudoClick
         end
         object ToolButton43: TToolButton
           Tag = 43
-          Left = 184
-          Top = 52
+          Left = 644
+          Top = 0
           Caption = 'My World'
           ImageIndex = 10
           OnClick = TudoClick
         end
         object S: TToolButton
           Tag = 256
-          Left = 276
-          Top = 52
+          Left = 736
+          Top = 0
           Caption = 'Sky'
           ImageIndex = 15
           OnClick = TudoClick
         end
         object ToolButton60: TToolButton
           Tag = 258
-          Left = 368
-          Top = 52
+          Left = 828
+          Top = 0
           Caption = 'VocabularyBuilder'
           ImageIndex = 16
           OnClick = TudoClick
@@ -513,7 +512,7 @@ object Main: TMain
       object ToolBarEducativos: TToolBar
         Left = 0
         Top = 0
-        Width = 794
+        Width = 1000
         Height = 52
         AutoSize = True
         ButtonHeight = 52
@@ -524,6 +523,7 @@ object Main: TMain
         Images = ImageList_Children
         ShowCaptions = True
         TabOrder = 0
+        ExplicitWidth = 1039
         object ToolButton10: TToolButton
           Tag = 31
           Left = 0
@@ -605,7 +605,7 @@ object Main: TMain
         Tag = 3
         Left = 0
         Top = 0
-        Width = 794
+        Width = 1000
         Height = 52
         AutoSize = True
         ButtonHeight = 52
@@ -618,10 +618,11 @@ object Main: TMain
         ShowCaptions = True
         ShowHint = True
         TabOrder = 0
+        ExplicitWidth = 1039
         object Edit2: TEdit
           Left = 0
           Top = 0
-          Width = 25
+          Width = 41
           Height = 52
           BorderStyle = bsNone
           Color = clMenu
@@ -713,7 +714,7 @@ object Main: TMain
         Tag = 4
         Left = 0
         Top = 0
-        Width = 794
+        Width = 1000
         Height = 52
         AutoSize = True
         ButtonHeight = 52
@@ -724,6 +725,7 @@ object Main: TMain
         Images = ImageList_Ingles
         ShowCaptions = True
         TabOrder = 0
+        ExplicitWidth = 1039
         object ToolButton53: TToolButton
           Tag = 20
           Left = 0
@@ -781,7 +783,7 @@ object Main: TMain
         Tag = 4
         Left = 0
         Top = 0
-        Width = 794
+        Width = 1000
         Height = 52
         AutoSize = True
         ButtonHeight = 52
@@ -792,10 +794,11 @@ object Main: TMain
         Images = ImageList_Ingles
         ShowCaptions = True
         TabOrder = 0
+        ExplicitWidth = 1039
         object Edit1: TEdit
           Left = 0
           Top = 0
-          Width = 26
+          Width = 42
           Height = 52
           AutoSize = False
           BorderStyle = bsNone
@@ -881,7 +884,7 @@ object Main: TMain
         Tag = 5
         Left = 0
         Top = 0
-        Width = 794
+        Width = 1000
         Height = 52
         AutoSize = True
         ButtonHeight = 52
@@ -894,6 +897,7 @@ object Main: TMain
         ShowCaptions = True
         ShowHint = True
         TabOrder = 0
+        ExplicitWidth = 1039
         object ToolButton26: TToolButton
           Tag = 90
           Left = 0
@@ -919,7 +923,7 @@ object Main: TMain
         Tag = 5
         Left = 0
         Top = 0
-        Width = 794
+        Width = 1000
         Height = 52
         AutoSize = True
         ButtonHeight = 52
@@ -934,6 +938,7 @@ object Main: TMain
         ShowCaptions = True
         ShowHint = True
         TabOrder = 0
+        ExplicitWidth = 1039
         object ToolButton32: TToolButton
           Tag = 200
           Left = 0
@@ -5254,7 +5259,7 @@ object Main: TMain
     Height = 32
     ImageType = itMask
     Width = 32
-    Left = 544
+    Left = 472
     Top = 104
     Bitmap = {
       494C010106000800040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
@@ -6325,7 +6330,7 @@ object Main: TMain
     Height = 32
     ImageType = itMask
     Width = 32
-    Left = 355
+    Left = 315
     Top = 104
     Bitmap = {
       494C010104000600040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
@@ -7396,7 +7401,7 @@ object Main: TMain
     Height = 32
     ImageType = itMask
     Width = 32
-    Left = 446
+    Left = 406
     Top = 104
     Bitmap = {
       494C010104000600040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
@@ -8467,7 +8472,7 @@ object Main: TMain
     Height = 32
     ImageType = itMask
     Width = 32
-    Left = 704
+    Left = 560
     Top = 104
     Bitmap = {
       494C010106002800040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
@@ -9537,7 +9542,7 @@ object Main: TMain
     Enabled = False
     Interval = 2000
     OnTimer = Timer_ExplorerTimer
-    Left = 16
+    Left = 24
     Top = 104
   end
   object Workers: TServerSocket
@@ -9548,7 +9553,7 @@ object Main: TMain
     OnClientDisconnect = WorkersClientDisconnect
     OnClientRead = WorkersClientRead
     OnClientError = WorkersClientError
-    Left = 224
-    Top = 152
+    Left = 624
+    Top = 104
   end
 end

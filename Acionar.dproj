@@ -116,6 +116,7 @@
         <VerInfo_Release>22</VerInfo_Release>
         <VerInfo_Build>3095</VerInfo_Build>
         <VerInfo_Keys>CompanyName=Paitom TIC;FileDescription=$(MSBuildProjectName);FileVersion=2023.3.22.3095;InternalName=Gerente;LegalCopyright=Pedro Tomaz Alves;LegalTrademarks=Paitom TIC;OriginalFilename=Acionar.exe;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=5.1;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>

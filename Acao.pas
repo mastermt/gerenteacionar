@@ -27,7 +27,7 @@ uses
   ImgList, Buttons, ComCtrls, ToolWin, Dialogs, Menus,
   ScktComp,
   MMSystem,
-  Graphics, jpeg, DB, DBCtrls, XPMan, System.UITypes, System.ImageList;
+  Graphics, jpeg, System.ImageList;
 
 const
   // WallPaperStyles
@@ -136,15 +136,14 @@ type
     Label_Aluno: TLabel;
     Foto_Aluno: TImage;
     B_Login: TBitBtn;
-    Label_Turma: TLabel;
     Label_Tempo: TLabel;
     B_Logout: TBitBtn;
-    DBText1: TDBText;
     Workers: TServerSocket;
     Label_Codigo: TLabel;
     Label_Senha: TLabel;
     Edit_Codigo: TEdit;
     Edit_Senha: TEdit;
+    Label_Turma: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure Edit1KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure Edit2KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -1464,7 +1463,7 @@ begin
   Pasta := Pchar(GetParam(Palavra, '#', 6));
   Size_Screen := Pchar(GetParam(Palavra, '#', 7));
   Liberar := Pchar(GetParam(Palavra, '#', 8));
-  montar_iso := Pchar(GetParam(Palavra, '#', 9));
+  montar_iso := PWideChar(GetParam(Palavra, '#', 9));
 
   case Numero of
     1: // Aviso de Coneccao
@@ -1637,6 +1636,10 @@ begin
       end;
     finally
       SL.Free;
+      If OK Then
+      begin
+
+      end;
       // If OK Then
       // begin
       // SizeScreen:='800x600x16';
