@@ -266,6 +266,7 @@ object Main: TMain
         ShowCaptions = True
         ShowHint = True
         TabOrder = 0
+        ExplicitWidth = 996
         object ToolButton38: TToolButton
           Tag = 92
           Left = 0
@@ -992,7 +993,6 @@ object Main: TMain
   object ImageList_EnglishDisc: TImageList
     DrawingStyle = dsTransparent
     Height = 32
-    ImageType = itMask
     Width = 32
     Left = 112
     Top = 104
@@ -2591,7 +2591,6 @@ object Main: TMain
   object ImageList_Children: TImageList
     DrawingStyle = dsTransparent
     Height = 32
-    ImageType = itMask
     Width = 32
     Left = 216
     Top = 104
@@ -5246,7 +5245,6 @@ object Main: TMain
   object ImageList_Outros: TImageList
     DrawingStyle = dsTransparent
     Height = 32
-    ImageType = itMask
     Width = 32
     Left = 472
     Top = 104
@@ -6317,7 +6315,6 @@ object Main: TMain
   object ImageList_espanhol: TImageList
     DrawingStyle = dsTransparent
     Height = 32
-    ImageType = itMask
     Width = 32
     Left = 315
     Top = 104
@@ -7388,7 +7385,6 @@ object Main: TMain
   object ImageList_Ingles: TImageList
     DrawingStyle = dsTransparent
     Height = 32
-    ImageType = itMask
     Width = 32
     Left = 406
     Top = 104
@@ -8459,7 +8455,6 @@ object Main: TMain
   object ImageList_Control: TImageList
     DrawingStyle = dsTransparent
     Height = 32
-    ImageType = itMask
     Width = 32
     Left = 560
     Top = 104
