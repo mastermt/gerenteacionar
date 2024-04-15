@@ -3,8 +3,8 @@ object Cliente: TCliente
   Top = 138
   BiDiMode = bdRightToLeftReadingOnly
   Caption = 'Gerente - Pedro Tomaz Alves - 1996-2023'
-  ClientHeight = 621
-  ClientWidth = 834
+  ClientHeight = 646
+  ClientWidth = 936
   Color = clBtnFace
   UseDockManager = True
   Font.Charset = DEFAULT_CHARSET
@@ -13,7 +13,6 @@ object Cliente: TCliente
   Font.Name = 'Segoe UI Light'
   Font.Style = []
   GlassFrame.Enabled = True
-  OldCreateOrder = True
   ParentBiDiMode = False
   Position = poDesigned
   Visible = True
@@ -22,36 +21,39 @@ object Cliente: TCliente
   OnDestroy = FormDestroy
   OnResize = FormResize
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 21
   object Splitter1: TSplitter
     Left = 200
     Top = 0
     Width = 4
-    Height = 598
+    Height = 623
     ExplicitLeft = 220
     ExplicitHeight = 442
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 598
-    Width = 834
+    Top = 623
+    Width = 936
     Height = 23
     Panels = <>
     SimplePanel = True
+    ExplicitTop = 597
+    ExplicitWidth = 830
   end
   object Panel_Reports: TPanel
     Left = 204
     Top = 0
-    Width = 630
-    Height = 598
+    Width = 732
+    Height = 623
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 626
+    ExplicitHeight = 597
     object Caderno: TTabbedNotebook
       Left = 1
       Top = 1
-      Width = 628
-      Height = 596
+      Width = 730
+      Height = 621
       Align = alClient
       TabFont.Charset = DEFAULT_CHARSET
       TabFont.Color = clBtnText
@@ -59,11 +61,16 @@ object Cliente: TCliente
       TabFont.Name = 'MS Sans Serif'
       TabFont.Style = []
       TabOrder = 0
+      ExplicitLeft = 6
+      ExplicitTop = -4
       object TTabPage
         Left = 4
-        Top = 32
+        Top = 24
         HelpContext = 200
         Caption = 'Ferramentas'
+        ExplicitTop = 32
+        ExplicitWidth = 616
+        ExplicitHeight = 559
         object Bevel1: TBevel
           Left = 0
           Top = 0
@@ -216,7 +223,7 @@ object Cliente: TCliente
         object ToolBar4: TToolBar
           Left = 0
           Top = 0
-          Width = 620
+          Width = 722
           Height = 40
           AutoSize = True
           ButtonHeight = 40
@@ -226,6 +233,7 @@ object Cliente: TCliente
           ParentShowHint = False
           ShowHint = True
           TabOrder = 0
+          ExplicitWidth = 616
           object TB_AbreCDROM: TToolButton
             Left = 0
             Top = 0
@@ -326,14 +334,17 @@ object Cliente: TCliente
       end
       object TTabPage
         Left = 4
-        Top = 32
+        Top = 24
         HelpContext = 201
         Caption = 'Programas'
+        ExplicitTop = 32
+        ExplicitWidth = 616
+        ExplicitHeight = 559
         object LV_Programas: TListView
           Left = 0
           Top = 150
-          Width = 620
-          Height = 410
+          Width = 722
+          Height = 443
           Align = alClient
           BiDiMode = bdLeftToRight
           Columns = <
@@ -382,11 +393,13 @@ object Cliente: TCliente
           OnColumnClick = ListViewColumnClick
           OnCompare = ListViewCompare
           OnDblClick = LV_ProgramasDblClick
+          ExplicitWidth = 616
+          ExplicitHeight = 409
         end
         object Panel_Prog_Dados: TPanel
           Left = 0
           Top = 0
-          Width = 620
+          Width = 722
           Height = 150
           Align = alTop
           Font.Charset = DEFAULT_CHARSET
@@ -396,6 +409,7 @@ object Cliente: TCliente
           Font.Style = []
           ParentFont = False
           TabOrder = 1
+          ExplicitWidth = 616
           object SB_Executar: TSpeedButton
             Left = 512
             Top = 21
@@ -758,14 +772,17 @@ object Cliente: TCliente
       end
       object TTabPage
         Left = 4
-        Top = 32
+        Top = 24
         HelpContext = 202
         Caption = 'Processos'
+        ExplicitTop = 32
+        ExplicitWidth = 616
+        ExplicitHeight = 559
         object LV_Processos: TListView
           Left = 0
           Top = 44
-          Width = 620
-          Height = 516
+          Width = 722
+          Height = 549
           Align = alClient
           BiDiMode = bdLeftToRight
           Columns = <
@@ -793,14 +810,17 @@ object Cliente: TCliente
           ViewStyle = vsReport
           OnColumnClick = ListViewColumnClick
           OnCompare = ListViewCompare
+          ExplicitWidth = 616
+          ExplicitHeight = 515
         end
         object Panel1: TPanel
           Left = 0
           Top = 0
-          Width = 620
+          Width = 722
           Height = 44
           Align = alTop
           TabOrder = 1
+          ExplicitWidth = 616
           object SB_Ver_Processos: TSpeedButton
             Left = 4
             Top = 4
@@ -947,19 +967,22 @@ object Cliente: TCliente
       end
       object TTabPage
         Left = 4
-        Top = 32
+        Top = 24
         HelpContext = 203
         Caption = 'Registro'
+        ExplicitTop = 32
+        ExplicitWidth = 616
+        ExplicitHeight = 559
         object Splitter2: TSplitter
           Left = 145
           Top = 3
-          Height = 557
+          Height = 590
           ExplicitHeight = 409
         end
         object Splitter3: TSplitter
           Left = 0
           Top = 0
-          Width = 620
+          Width = 722
           Height = 3
           Cursor = crVSplit
           Align = alTop
@@ -968,8 +991,8 @@ object Cliente: TCliente
         object LV_Registro: TListView
           Left = 148
           Top = 3
-          Width = 472
-          Height = 557
+          Width = 574
+          Height = 590
           Align = alClient
           BiDiMode = bdLeftToRight
           Columns = <
@@ -997,28 +1020,34 @@ object Cliente: TCliente
           ViewStyle = vsReport
           OnColumnClick = ListViewColumnClick
           OnCompare = ListViewCompare
+          ExplicitWidth = 468
+          ExplicitHeight = 556
         end
         object Panel_Registro1: TPanel
           Left = 0
           Top = 3
           Width = 145
-          Height = 557
+          Height = 590
           Align = alLeft
           BiDiMode = bdLeftToRight
           ParentBiDiMode = False
           TabOrder = 1
+          ExplicitHeight = 556
         end
       end
       object TTabPage
         Left = 4
-        Top = 32
+        Top = 24
         HelpContext = 204
         Caption = 'Internet'
+        ExplicitTop = 32
+        ExplicitWidth = 616
+        ExplicitHeight = 559
         object LV_Internet: TListView
           Left = 0
           Top = 39
-          Width = 620
-          Height = 521
+          Width = 722
+          Height = 554
           Align = alClient
           BiDiMode = bdLeftToRight
           Columns = <
@@ -1047,11 +1076,13 @@ object Cliente: TCliente
           OnColumnClick = ListViewColumnClick
           OnCompare = ListViewCompare
           OnDblClick = LV_InternetDblClick
+          ExplicitWidth = 616
+          ExplicitHeight = 520
         end
         object ToolBar1: TToolBar
           Left = 0
           Top = 0
-          Width = 620
+          Width = 722
           Height = 39
           AutoSize = True
           ButtonHeight = 39
@@ -1061,6 +1092,7 @@ object Cliente: TCliente
           ParentShowHint = False
           ShowHint = True
           TabOrder = 1
+          ExplicitWidth = 616
           object TB_Propriedades: TToolButton
             Left = 0
             Top = 0
@@ -1094,14 +1126,17 @@ object Cliente: TCliente
       end
       object TTabPage
         Left = 4
-        Top = 32
+        Top = 24
         HelpContext = 205
         Caption = 'Relat'#243'rios'
+        ExplicitTop = 32
+        ExplicitWidth = 616
+        ExplicitHeight = 559
         object LV_Report: TListView
           Left = 0
           Top = 0
-          Width = 620
-          Height = 560
+          Width = 722
+          Height = 593
           Align = alClient
           BiDiMode = bdLeftToRight
           Columns = <
@@ -1129,6 +1164,8 @@ object Cliente: TCliente
           ViewStyle = vsReport
           OnColumnClick = ListViewColumnClick
           OnCompare = ListViewCompare
+          ExplicitWidth = 616
+          ExplicitHeight = 559
         end
       end
     end
@@ -1137,7 +1174,7 @@ object Cliente: TCliente
     Left = 0
     Top = 0
     Width = 200
-    Height = 598
+    Height = 623
     Align = alLeft
     Alignment = taLeftJustify
     Font.Charset = DEFAULT_CHARSET
@@ -1147,11 +1184,12 @@ object Cliente: TCliente
     Font.Style = []
     ParentFont = False
     TabOrder = 2
+    ExplicitHeight = 597
     object LV_Maquinas: TListView
       Left = 1
       Top = 114
       Width = 198
-      Height = 445
+      Height = 470
       Align = alClient
       BiDiMode = bdLeftToRight
       Columns = <>
@@ -1169,10 +1207,11 @@ object Cliente: TCliente
       SmallImages = IL_Ligacao
       TabOrder = 0
       OnSelectItem = LV_MaquinasSelectItem
+      ExplicitHeight = 444
     end
     object ToolBar2: TToolBar
       Left = 1
-      Top = 559
+      Top = 584
       Width = 198
       Height = 38
       Align = alBottom
@@ -1184,6 +1223,7 @@ object Cliente: TCliente
       ParentShowHint = False
       ShowHint = True
       TabOrder = 1
+      ExplicitTop = 558
       object SB_Reiniciar: TToolButton
         Left = 0
         Top = 0
@@ -1355,7 +1395,7 @@ object Cliente: TCliente
   object IL_Comp1: TImageList
     Height = 32
     Width = 32
-    Left = 248
+    Left = 240
     Top = 381
     Bitmap = {
       494C010105000700040020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
@@ -6010,7 +6050,7 @@ object Cliente: TCliente
       000000000000}
   end
   object PM_Programas: TPopupMenu
-    Left = 553
+    Left = 585
     Top = 379
     object Executar1: TMenuItem
       Caption = 'E&xecutar'
@@ -6028,7 +6068,7 @@ object Cliente: TCliente
   object PM_Maquinas: TPopupMenu
     Images = IL_Ligacao
     MenuAnimation = [maLeftToRight]
-    Left = 425
+    Left = 433
     Top = 380
     object Conectar1: TMenuItem
       Action = Action_Conectar
@@ -6048,7 +6088,7 @@ object Cliente: TCliente
   end
   object ActionList1: TActionList
     Images = IL_Ligacao
-    Left = 489
+    Left = 497
     Top = 380
     object Action_Conectar: TAction
       Caption = '&Conectar'
@@ -6064,13 +6104,13 @@ object Cliente: TCliente
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
-    Left = 617
+    Left = 657
     Top = 380
   end
   object Timer2: TTimer
     Enabled = False
     OnTimer = Timer2Timer
-    Left = 665
+    Left = 705
     Top = 380
   end
 end

@@ -140,13 +140,11 @@ object Main: TMain
     080003FFFFFFF3F81C0007FFFFFFFFFFFF0007FFFFFFFFFFFFFF9FFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-  OldCreateOrder = True
   Position = poDesigned
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object PageControl1: TPageControl
     Tag = 30
@@ -154,11 +152,11 @@ object Main: TMain
     Top = 0
     Width = 1008
     Height = 161
-    ActivePage = TS_Aluno
+    ActivePage = TabSheet_Discovery
     Align = alTop
     Style = tsFlatButtons
     TabOrder = 0
-    ExplicitWidth = 800
+    ExplicitWidth = 1004
     object TS_Aluno: TTabSheet
       Caption = 'Aluno'
       ImageIndex = 10
@@ -268,7 +266,6 @@ object Main: TMain
         ShowCaptions = True
         ShowHint = True
         TabOrder = 0
-        ExplicitWidth = 792
         object ToolButton38: TToolButton
           Tag = 92
           Left = 0
@@ -316,7 +313,6 @@ object Main: TMain
         ShowCaptions = True
         ShowHint = True
         TabOrder = 0
-        ExplicitWidth = 1039
         object ToolButton13: TToolButton
           Tag = 1
           Left = 0
@@ -421,7 +417,6 @@ object Main: TMain
         ShowCaptions = True
         ShowHint = True
         TabOrder = 0
-        ExplicitWidth = 1039
         object ToolButton11: TToolButton
           Tag = 32
           Left = 0
@@ -523,7 +518,6 @@ object Main: TMain
         Images = ImageList_Children
         ShowCaptions = True
         TabOrder = 0
-        ExplicitWidth = 1039
         object ToolButton10: TToolButton
           Tag = 31
           Left = 0
@@ -618,7 +612,6 @@ object Main: TMain
         ShowCaptions = True
         ShowHint = True
         TabOrder = 0
-        ExplicitWidth = 1039
         object Edit2: TEdit
           Left = 0
           Top = 0
@@ -639,7 +632,7 @@ object Main: TMain
           OnKeyUp = Edit2KeyUp
         end
         object UpDown2: TUpDown
-          Left = 41
+          Left = 57
           Top = 0
           Width = 15
           Height = 52
@@ -652,14 +645,14 @@ object Main: TMain
         end
         object ESPCD: TToolButton
           Tag = 50
-          Left = 56
+          Left = 72
           Top = 0
           Caption = 'Espa'#241'ol en CD'
           ImageIndex = 1
           OnClick = TudoClick
         end
         object ToolButton27: TToolButton
-          Left = 134
+          Left = 150
           Top = 0
           Width = 8
           Caption = 'ToolButton27'
@@ -668,7 +661,7 @@ object Main: TMain
         end
         object ToolButton20: TToolButton
           Tag = 51
-          Left = 142
+          Left = 158
           Top = 0
           Caption = 'Contacto 1'
           ImageIndex = 0
@@ -676,7 +669,7 @@ object Main: TMain
         end
         object ToolButton21: TToolButton
           Tag = 52
-          Left = 220
+          Left = 236
           Top = 0
           Caption = 'Contacto 2'
           ImageIndex = 0
@@ -684,7 +677,7 @@ object Main: TMain
         end
         object ToolButton22: TToolButton
           Tag = 53
-          Left = 298
+          Left = 314
           Top = 0
           Caption = 'Contacto 3'
           ImageIndex = 0
@@ -692,14 +685,14 @@ object Main: TMain
         end
         object ToolButton19: TToolButton
           Tag = 54
-          Left = 376
+          Left = 392
           Top = 0
           Caption = 'Triple Play '
           ImageIndex = 2
           OnClick = TudoClick
         end
         object ToolButton44: TToolButton
-          Left = 454
+          Left = 470
           Top = 0
           Caption = 'novo'
           ImageIndex = 3
@@ -725,7 +718,6 @@ object Main: TMain
         Images = ImageList_Ingles
         ShowCaptions = True
         TabOrder = 0
-        ExplicitWidth = 1039
         object ToolButton53: TToolButton
           Tag = 20
           Left = 0
@@ -794,7 +786,6 @@ object Main: TMain
         Images = ImageList_Ingles
         ShowCaptions = True
         TabOrder = 0
-        ExplicitWidth = 1039
         object Edit1: TEdit
           Left = 0
           Top = 0
@@ -817,7 +808,7 @@ object Main: TMain
           OnKeyUp = Edit1KeyUp
         end
         object UpDown1: TUpDown
-          Left = 42
+          Left = 58
           Top = 0
           Width = 15
           Height = 52
@@ -829,14 +820,14 @@ object Main: TMain
         end
         object EngCDROM: TToolButton
           Tag = 70
-          Left = 57
+          Left = 73
           Top = 0
           Caption = 'English in CD'
           ImageIndex = 0
           OnClick = TudoClick
         end
         object ToolButton25: TToolButton
-          Left = 133
+          Left = 149
           Top = 0
           Width = 8
           Caption = 'ToolButton25'
@@ -845,7 +836,7 @@ object Main: TMain
         end
         object ToolButton24: TToolButton
           Tag = 71
-          Left = 141
+          Left = 157
           Top = 0
           Caption = 'TOELF'
           ImageIndex = 1
@@ -853,7 +844,7 @@ object Main: TMain
         end
         object ToolButton34: TToolButton
           Tag = 72
-          Left = 217
+          Left = 233
           Top = 0
           Caption = 'Grammar 3D'
           ImageIndex = 2
@@ -861,7 +852,7 @@ object Main: TMain
         end
         object ToolButton61: TToolButton
           Tag = 73
-          Left = 293
+          Left = 309
           Top = 0
           Caption = 'Insideout Beg'
           ImageIndex = 3
@@ -869,7 +860,7 @@ object Main: TMain
         end
         object ToolButton62: TToolButton
           Tag = 74
-          Left = 369
+          Left = 385
           Top = 0
           Caption = 'Insideout Elem'
           ImageIndex = 3
@@ -897,7 +888,6 @@ object Main: TMain
         ShowCaptions = True
         ShowHint = True
         TabOrder = 0
-        ExplicitWidth = 1039
         object ToolButton26: TToolButton
           Tag = 90
           Left = 0
@@ -938,7 +928,6 @@ object Main: TMain
         ShowCaptions = True
         ShowHint = True
         TabOrder = 0
-        ExplicitWidth = 1039
         object ToolButton32: TToolButton
           Tag = 200
           Left = 0
